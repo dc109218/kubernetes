@@ -1,0 +1,61 @@
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: program-pv
+#   namespace: program
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   capacity:
+#     storage: 1Gi
+#   hostPath:
+#     path: /apps
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: program
+#   namespace: program
+# spec:
+#   accessModes:
+#     - ReadWriteOnce 
+#   resources:
+#     requests:
+#       storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: white-pvc
+  namespace: aprod
+spec:
+  storageClassName: ssd-hostpath
+  accessModes: [ReadWriteOnce]
+  resources: { requests: { storage: 2Gi } }
+---
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: program-pvc
+#   labels:
+#     type: local
+# spec:
+#   storageClassName: ssd-hostpath
+#   capacity:
+#     storage: 1Gi
+#   accessModes:
+#     - ReadWriteOnce
+#   hostPath:
+#     path: "/home/ubuntu/token"
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: program-pvc
+# spec:
+#   storageClassName: ssd-hostpath
+#   accessModes:
+#     - ReadWriteOnce
+#   resources:
+#     requests:
+#       storage: 1Gi

@@ -1,0 +1,11 @@
+# redis-cli -h  10.122.0.4 -p 6379 -a yuanoh9ohgo4ahwohx
+# select 1
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: aprod
+  name: perfectengine-env-config
+data:
+  PORT: "30334"
+  NODE_ENV: "production"
+  

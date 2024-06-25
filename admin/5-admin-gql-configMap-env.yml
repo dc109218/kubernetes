@@ -1,0 +1,10 @@
+# redis-cli -h  10.122.0.4 -p 6379 -a anoh9ohgo4ahwohx
+# select 1
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: admin
+  name: admin-gql-env-config
+data:
+  PORT: "50111"
+  NODE_ENV: "development"
